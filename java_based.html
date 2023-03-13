@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <title>Webpage</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    body{
+        background-color: rgb(231, 231, 229);
+    }
+ #bannner{
+    background-image:  linear-gradient(45deg,
+              rgba(250, 232, 231, 0.75),
+              rgba(8,83,156, 0.75)),url('./joanna-kosinska-bF2vsubyHcQ-unsplash.jpg');
+    /* background-image: linear-gradient(red); */
+    height: 80vh;
+   text-align: center;
+   display: flex;
+   justify-self: center;
+   align-items: center;
+ }
+
+ @media (max-width:400px) {
+    #banner{
+        height: 300px;
+    }
+ }
+ @keyframes background-color {
+    0% {
+        background: linear-gradient(to bottom, #000428, #004683);
+    }
+
+    25% {
+        background: linear-gradient(135deg, #1a4223, #5ee95e);
+    }
+
+    50% {
+        background: linear-gradient(to bottom, #421a31, #e95ed2);
+    }
+
+    100% {
+        background: linear-gradient(-135deg, #fae37d, #881da8, #20668f);
+    }
+
+}
+
+.container {
+    margin-top: 80px;
+}
+
+.container .col-lg-4 {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    border: none;
+    background-color: inherit;
+}
+
+.card .face {
+    position: absolute;
+    color: #292424;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: rgba(236, 0, 0, 0.06);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    backface-visibility: hidden;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    /* border-right: 1px solid #999;
+border-bottom: 1px solid #999; */
+}
+
+.card .face.front-face,
+.card .face.back-face {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .face.front-face .profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card .face.front-face .name {
+    letter-spacing: 2px;
+}
+
+.card .face.front-face .designation {
+    font-size: 0.8rem;
+    color: #2c2222;
+    letter-spacing: 0.8px;
+}
+
+.card:hover .face.front-face {
+    transform: rotateY(180deg);
+}
+
+.card .face.back-face {
+    position: absolute;
+    background: rgba(124, 48, 48, 0.06);
+    transform: rotateY(180deg);
+    padding: 20px 30px;
+    text-align: center;
+    user-select: none;
+}
+
+.card .face.back-face .fa-quote-left {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 1.2rem;
+}
+
+.card .face.back-face .fa-quote-right {
+    position: absolute;
+    bottom: 35px;
+    right: 25px;
+    font-size: 1.2rem;
+}
+
+.card:hover .face.back-face {
+    transform: rotateY(360deg);
+}
+
+@media(max-width: 991.5px) {
+    .col-lg-4 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+#contact {
+width: 500px;
+margin:2em auto;
+background:white;
+position: relative;
+}
+#contact::after {
+content: "";
+display: block;
+height: 30px;
+width: 90%;
+left: 5%;
+bottom: 0;
+position: absolute;
+-webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+border-radius: 100%;
+z-index: -1;
+}
+#contact article {
+  padding: 1em;
+}
+#contact h1 {
+background: #F2385A;
+font-family: Oswald ,sans-serif;
+font-size: 1.75em;
+padding: 0.6em 0 0.6em 0.4em;
+color: white;
+text-shadow: 0 0.06em 0 #424242;
+position: relative;
+}
+.contactbutton {
+background: #F2385A;
+-webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+text-align: center;
+display: block;
+width: 100%;
+height: 50px;
+margin-top: 20px;
+margin-bottom: 2px;
+cursor: pointer;
+}
+.contactbutton:hover {
+-webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+margin-top: 22px;
+margin-left: 2px;
+margin-bottom: 0px;
+}
+.mail {
+margin-top: 11px;
+font-size: 15px;
+display: inline-block;
+border-top: 2em solid transparent;
+border-left: 2.6em solid #832032;
+height: 0;
+width: 0;
+position: relative;
+}
+.mail:before {
+content: '';
+top: -2.5em;
+left: -2.95em;
+display: block;
+position: absolute;
+border-top: 1.2em solid #832032;
+border-left: 1.6em solid transparent;
+border-right: 1.6em solid transparent;
+border-bottom: 1em solid transparent;
+font-size: 0.8em;
+}
+.mail::after {
+display: block;
+content: "";
+position: absolute;
+border-top: 2em solid transparent;
+border-right: 2.6em solid #832032;
+height: 0;
+width: 0;
+left: -2.18em;
+bottom: 0;
+}
+#checkcontact{
+position: absolute;
+left: -9999px;
+}
+.contactform {
+overflow: hidden;
+max-height: 0px;
+-webkit-transition: all linear 1s;
+-moz-transition: all linear 1s;
+-o-transition: all linear 1s;
+-ms-transition: all linear 1s;
+transition: all linear 1s;
+}
+#checkcontact:checked + .contactform {
+max-height: 1000px;
+}
+.input_wrapper {
+position: relative;
+}
+.textarea_wrapper textarea {
+margin-top: 20px;
+display: block;
+width: 100%;
+background: white;
+border: 1px solid #DADADA;
+box-shadow: 0 0 1px 0 #E4E4E4;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: #5E5E5E;
+}
+.input_wrapper input[type="text"] {
+margin-top: 1em;
+display: block;
+width: 100%;
+background: white;
+border: 1px solid #DADADA;
+box-shadow: 0 0 1px 0 #E4E4E4;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: #5E5E5E;
+text-indent: 15%;
+}
+.input_wrapper input[type="text"]:focus {
+background: rgba(242, 56, 90, 0.05);
+box-shadow: inset 2px 2px 5px 0 #DADADA;
+outline: none;
+text-indent: 0;
+}
+.input_wrapper label {
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+background: #F2385A;
+color: white;
+font-family: Oswald ,sans-serif;
+box-sizing: border-box;
+width: 15%;
+text-align: center;
+line-height: 2.8em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+}
+.input_wrapper input[type="text"]:focus + label {
+left: 85%;
+}
+.textarea_wrapper textarea {
+margin-top: 20px;
+display: block;
+width: 100%;
+  min-height:150px;
+background: white;
+border: 1px solid #DADADA;
+box-shadow: 0 0 1px 0 #E4E4E4;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: #5E5E5E;
+}
+.textarea_wrapper textarea:focus {
+background: rgba(242, 56, 90, 0.05);
+box-shadow: inset 2px 2px 5px 0 #DADADA;
+outline: none;
+}
+.submit_wrapper {
+text-align: center;
+}
+.submit_wrapper input {
+text-align: center;
+display: inline-block;
+width: 40%;
+height: 50px;
+margin-top: 1em;
+margin-bottom: 6px;
+cursor: pointer;
+background: #F2385A;
+color: white;
+font-family: Oswald ,sans-serif;
+font-size: 1em;
+border: none;
+-webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+-webkit-appearance: none;
+  -webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+}
+.submit_wrapper input:hover {
+-webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+margin-top: 22px;
+margin-left: 2px;
+margin-bottom: 0px;
+}
+
+@media (max-width: 500px){
+#contact {
+width: 100%;
+}
+  .input_wrapper label {
+line-height: 3.5em;
+font-size: 0.8em;
+}
+}
+
+@media (max-width:400px) {
+    #nav-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">PAGE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav" id="nav-list">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <button type="button" class="btn btn-danger">Login</button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <div class="row" id="bannner">
+            <div class="col-sm-12">
+             <h3><b>Welcome to my Page</b></h3>
+            </div>
+        </div>
+      </div>
+        <div class="container">
+        <div class="row mt-3">
+            <div class="col-sm-5">
+                <img src="./markus-winkler-Xr1Lwph6eGI-unsplash.jpg" class="img-fluid" alt="" height="100px;">
+            </div>
+            <div class="col-sm-7">
+                <p>HTML, in full hypertext markup language, a formatting system for displaying material retrieved over the Internet. Each retrieval unit is known as a Web page (from World Wide Web), and such pages frequently contain hypertext links that allow related pages to be retrieved. HTML is the markup language for encoding Web pages. It was designed by the British scientist Sir Tim Berners-Lee at the CERN nuclear physics laboratory in Switzerland during the 1980s. HTML markup tags specify document elements such as headings, paragraphs, and tables. They mark up a document for display by a computer program known as a Web browser. The browser interprets the tags, displaying the headings, paragraphs, and tables in a layout that is adapted to the screen size and fonts available to it. HTML documents also contain anchors, which are tags that specify links to other Web pages.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+           
+                <h2 style="text-align: center;"><b>About Our Company</b></h2>
+                <div class="col-sm-6">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, doloremque beatae. Maiores quos porro cupiditate exercitationem mollitia magni voluptates! Deleniti culpa blanditiis, modi, maiores rem laboriosam consequatur nulla fugit, at libero autem a voluptatibus! Quaerat placeat quasi repellat obcaecati vitae hic exercitationem veritatis distinctio. Voluptate enim recusandae rerum atque odit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, deleniti ipsa! Unde laborum atque molestias, ab laudantium, saepe dolor voluptate eum ipsum aut fugit incidunt quisquam ipsa vitae odio corporis obcaecati officia cum! Repudiandae rerum unde aperiam distinctio neque sapiente magni, alias minima qui odit debitis, ea dolor. Voluptates, vel? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptas. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, rerum voluptate ipsa architecto consequuntur a repudiandae sint molestias dolorum commodi repellat porro nobis earum labore rem ab ut perspiciatis temporibus?</p>
+            </div>
+            <div class="col-sm-6">
+                <img src="./campaign-creators-iEiUITs149M-unsplash.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" style="background-color: #a19595; border-radius: 20px;">
+            <div class="col-sm-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="face front-face">
+                                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                                        alt="" class="profile">
+                                    <div class="pt-3 text-uppercase name">
+                                        Robert Garrison
+                                    </div>
+                                    <div class="designation">Android Developer</div>
+                                </div>
+                                <div class="face back-face">
+                                    <span class="fas fa-quote-left"></span>
+                                    <div class="testimonial">
+                                        I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
+                                        pleasant.
+                                        The service was execellent. I will refer everyone I know.
+                                    </div>
+                                    <span class="fas fa-quote-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="face front-face">
+                                    <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                                        alt="" class="profile">
+                                    <div class="pt-3 text-uppercase name">
+                                        Jeffery Kennan
+                                    </div>
+                                    <div class="designation">Full Stack Developer</div>
+                                </div>
+                                <div class="face back-face">
+                                    <span class="fas fa-quote-left"></span>
+                                    <div class="testimonial">
+                                        Really good, you have saved our business! I made bacck the purchase price in just 48 hours!
+                                        man, this thing is getting better and better as I learn more about it.
+                                    </div>
+                                    <span class="fas fa-quote-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="face front-face">
+                                    <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                        alt="" class="profile">
+                                    <div class="pt-3 text-uppercase name">
+                                        Issac Maxwell
+                                    </div>
+                                    <div class="designation">Finance Director</div>
+                                </div>
+                                <div class="face back-face">
+                                    <span class="fas fa-quote-left"></span>
+                                    <div class="testimonial">
+                                        Account keeper is the most valuable business research we have EVER purchased. Without
+                                        electrician, we would ahave gone bankrupt by now.
+                                    </div>
+                                    <span class="fas fa-quote-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div> 
+</div> 
+</div>
+
+
+  <div class="container">
+    <div class="row">
+        <h1 style="text-align: center;"><b>GET IN TOUCH</b></h1>
+        <div class="col-sm-12">
+        
+            <section id="contact">
+                <div class="sectionheader">	<h1>CONTACT</h1></div>
+                <article>
+                <p>Yoda soon you will call me master Governor Tarkin. A new hope Boba Fett bantha forest moon. Tusken raider Master Yoda do or do not never tell me the odds.</p>
+                    
+                        <label for="checkcontact" class="contactbutton"><div class="mail"></div></label><input id="checkcontact" type="checkbox">
+                
+                        <form action="" method="post" class="contactform">
+                            <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">NAME</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">EMAIL</label></p>
+                            <p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet">SUBJECT</label></p>
+                            <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
+                            <p class="submit_wrapper"><input type="submit" value="ENVOYER"></p>			
+                        </form>
+                </article>
+            </section>
+        </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+          <!-- Remove the container if you want to extend the Footer to full width. -->
+<!-- <div class="container my-5"> -->
+
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #1c2331"
+            >
+      <!-- Section: Social media -->
+      <section
+               class="d-flex justify-content-between p-4"
+               style="background-color: #6351ce"
+               >
+        <!-- Left -->
+        <div class="me-5">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+  
+        <!-- Right -->
+        <div>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">Company name</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p>
+                Here you can use rows and columns to organize your footer
+                content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Products</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p>
+                <a href="#!" class="text-white">MDBootstrap</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">MDWordPress</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">BrandFlow</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Bootstrap Angular</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Useful links</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p>
+                <a href="#!" class="text-white">Your Account</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Become an Affiliate</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Shipping Rates</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Contact</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+              <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+              <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+              <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+  
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+           >MDBootstrap.com</a
+          >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  
+  </div>
+  <!-- End of .container -->
+        </div>
+    </div>
+  </div>
+
+    <script>
+        $(document).ready(function () {
+    var silder = $(".owl-carousel");
+    silder.owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: false,
+        items: 1,
+        stagePadding: 20,
+        center: true,
+        nav: false,
+        margin: 50,
+        dots: true,
+        loop: true,
+        responsive: {
+            0: { items: 1 },
+            480: { items: 2 },
+            575: { items: 2 },
+            768: { items: 2 },
+            991: { items: 3 },
+            1200: { items: 4 }
+        }
+    });
+});
+    </script>
+</body>
+</html>
